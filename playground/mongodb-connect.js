@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+const {MongoClient, ObjectID} = require('mongodb');
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     if (err) {
@@ -18,8 +18,8 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     // });
 
     // db.collection('Users').insertOne({
-    //     name: 'fish',
-    //     age: 26,
+    //     name: 'fish2',
+    //     age: 28,
     //     location: 'Taipei'
     // }, (err, result) => {
     //     if (err) {
@@ -28,11 +28,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
-    db.collection('Users').find({name: 'fish2'}).toArray().then((docs) => {
-        console.log(JSON.stringify(docs, undefined, 2));
-    }, (err) => {
-        console.log('找無', err);
-    });
+    // db.collection('Users').find({name: 'fish2'}).toArray().then((docs) => {
+    //     console.log(JSON.stringify(docs, undefined, 2));
+    // }, (err) => {
+    //     console.log('找無', err);
+    // });
+
+    // db.collection('Users').findOneAndDelete({ _id: new ObjectID('5b680f437d9b368590fc9ae6')}).then((result) => {
+    //     console.log(result);
+    // });
+
 
     client.close();
 });
