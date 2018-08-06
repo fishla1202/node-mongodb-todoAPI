@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Users = mongoose.model('Users', {
     email: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
         minlength: 1
     }
